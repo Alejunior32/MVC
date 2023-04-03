@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.orh"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <link href="bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" th:action="@{/participantes/marca-presença}" th:object="${presenca}" >
+            <select   th:field="*{data}"  required>
+                <option th:each=" data : ${listaDeDias}" th:value="data"></option>
+            </select>
+            <input type="checkbox" th:field="*{presente}">
+        <button type="submit">Marcar Presença</button>
+    </form>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
